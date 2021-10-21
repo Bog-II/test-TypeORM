@@ -8,9 +8,6 @@ require('dotenv').config();
 createConnection()
   .then(async (connection) => {
     const entityManager = getManager();
-    // const examples = await connection.manager.find(Example);
-    // const users = await connection.manager.find(User);
-    // console.log(examples, users);
 
     const newUser = new User();
     newUser.firstName = 'newUserFirstName';
@@ -20,7 +17,7 @@ createConnection()
     await entityManager.save(newUser);
 
     const users = await entityManager.find(User);
-    const users2 = await entityManager.find("users");
+    const users2 = await entityManager.find('users');
     console.log(users, users2);
   })
   .catch((error) => console.log(error));
