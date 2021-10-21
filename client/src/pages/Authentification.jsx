@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-export default Authentification = () => {
+const Authentification = () => {
   return (
     <div>
-      
+      <h1>Authentification Page</h1>
+      <form action="">
+        <button type="submit">Log In</button>
+      </form>
     </div>
-  )
-}
+  );
+};
+
+export default Authentification;

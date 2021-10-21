@@ -1,6 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
+// Import pages
+import Authentification from './pages/Authentification';
+import Registration from './pages/Registration';
+import Users from './pages/Users';
+import DeleteAccount from './pages/DeleteAccount';
+import Home from './pages/Home';
+
 export default function App() {
   return (
     <Router>
@@ -10,39 +17,47 @@ export default function App() {
             <li>
               <Link to="/">Home</Link>
             </li>
+
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/registration">Registration</Link>
             </li>
+
+            <li>
+              <Link to="/auth">Authentification</Link>
+            </li>
+
             <li>
               <Link to="/users">Users</Link>
+            </li>
+
+            <li>
+              <Link to="/delete_account">Delete Account</Link>
             </li>
           </ul>
         </nav>
 
         <Switch>
-          <Route path="/about">
-            <About />
+          <Route path="/" exact>
+            <Home />
           </Route>
+
+          <Route path="/auth">
+            <Authentification />
+          </Route>
+
+          <Route path="/registration">
+            <Registration />
+          </Route>
+
           <Route path="/users">
             <Users />
           </Route>
-          <Route path="/">
-            <Home />
+
+          <Route path="/delete_account">
+            <DeleteAccount />
           </Route>
         </Switch>
       </div>
     </Router>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }

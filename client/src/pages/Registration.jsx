@@ -1,7 +1,15 @@
 import React from 'react';
 
-export default Registration = () => {
-  return <div>
-    
-  </div>;
+const Registration = () => {
+  return (
+    <div>
+      <h1>Registration Page</h1>
+
+      <form action="">
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  );
 };
+
+export default Registration;
